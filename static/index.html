@@ -10,8 +10,27 @@
     <textarea id="text" rows="5" cols="60"
         placeholder="224576 이찬희 스팸으로 의심되는 메세지를 붙여넣어주세요!"></textarea><br><br>
 
-    
+    <button onclick="classify()">버튼 누르지 말라고 했다!!</button>
+    <h3 id="result"></h3>
 
+<script>
+    function classify() {
+        const text = document.getElementById("text").value;
+
+        fetch("/classify", {
+            method: "POST",
+            body: JSON.stringify({text})
+        })
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("result").innerText =
+            "결과: " + data.label + " (score=" + data.score + ")";
+        })
+        .catch(() => {
+            document.getElementById("result").innerText = "에러 발생";
+        });
+      }
+    </script>
 </body>
 </html>
 
