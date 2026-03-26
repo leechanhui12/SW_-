@@ -13,5 +13,5 @@ def check_spam(text: str) -> str:
     for kw in spam_keywords:
         print(kw, text)
         if kw in text:
-            hit += 1
+            hit += 100
     return "Spaaam" if hit >= 2 else "Haaam", hit
