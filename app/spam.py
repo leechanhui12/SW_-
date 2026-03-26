@@ -1,3 +1,4 @@
+# feture-a branch
 def check_spam(text: str) -> str:
     text = text.lower().strip()
     if text == "":
@@ -5,7 +6,7 @@ def check_spam(text: str) -> str:
     
     spam_keywords = [
         "free", "win", "winner", "prize", "click",
-        "buy now", "urgent", "cash", "money", "offer", "deal", "bonus" , "limited", "guarantee"
+        "buy now", "urgent", "cash", "money", "offer", "deal", "bonus" , "limited", "guarantee", "coupang"
     ]
 
     hit = 0
@@ -13,4 +14,4 @@ def check_spam(text: str) -> str:
         print(kw, text)
         if kw in text:
             hit += 1
-    return "spam" if hit >= 2 else "ham", hit
+    return "Spaaam" if hit >= 2 else "Haaam", hit
