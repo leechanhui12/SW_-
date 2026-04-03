@@ -1,8 +1,10 @@
 # feture-a branch
-def check_spam(text: str) -> str:
+def check_spam(text: str) -> tuple:
     text = text.lower().strip()
+    
+    # 수정된 부분: 빈 문자열일 경우 "undefined"와 0을 반환하도록 변경
     if text == "":
-        return "ham"
+        return "undefined", 0
     
     spam_keywords = [
         "free", "win", "winner", "prize", "click",
@@ -14,4 +16,5 @@ def check_spam(text: str) -> str:
         print(kw, text)
         if kw in text:
             hit += 1
+            
     return "Spaaam" if hit >= 2 else "Haaam", hit
